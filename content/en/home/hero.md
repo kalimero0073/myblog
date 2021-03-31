@@ -15,7 +15,7 @@ hero_media = "/img/portrait.jpg"
 	# The url of the button
   url = "/about"
 	# The text of the button
-  label = "Know more"
+  label = "About me"
 	# Primary color
 	primary = true
 
@@ -25,7 +25,7 @@ hero_media = "/img/portrait.jpg"
 
 +++
 
-# **Welcome** to my page
+# **Hello, I am Kale. Nice to meet you!**
 
-This site was created using Hugo with Pico - a minimalist, readable, responsive, light and beautiful Hugo theme.
+This site provides an insight into topics that I am interested in.
 
