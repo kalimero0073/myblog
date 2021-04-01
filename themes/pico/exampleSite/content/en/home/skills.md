@@ -10,24 +10,24 @@ title = "Skills"
 subtitle = "I am really good at the following technical skills"
 
 [[bar]]
-	icon = "/icons/precision.svg"
+	icon = "/iconz/precision.svg"
 	name = "Precision"
 	percent = "95%"
 
 [[bar]]
-	icon = "/icons/heat.svg"
+	icon = "/iconz/heat.svg"
 	name = "Heat Control"
 	percent = "90%"
 
 
 [[bar]]
-	icon = "/icons/chicken.svg"
+	icon = "/iconz/chicken.svg"
 	name = "Quality of Food"
 	percent = "87%"
 
 
 [[bar]]
-	icon = "/icons/presentation.svg"
+	icon = "/iconz/presentation.svg"
 	name = "Presentation"
 	percent = "75%"
 

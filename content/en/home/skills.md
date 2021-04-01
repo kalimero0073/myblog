@@ -10,24 +10,24 @@ title = "Skills"
 subtitle = "My technical skills"
 
 [[bar]]
-	icon = "/icons/java.svg"
+	icon = ""
 	name = "Java"
 	percent = "85%"
 
 [[bar]]
-	icon = "/icons/javascript.svg"
+	icon = ""
 	name = "JavaScript"
 	percent = "55%"
 
 
 [[bar]]
-	icon = "/icons/php.svg"
+	icon = ""
 	name = "PHP"
 	percent = "25%"
 
 
 [[bar]]
-	icon = "/icons/sap.svg"
+	icon = ""
 	name = "ABAP"
 	percent = "25%"
 

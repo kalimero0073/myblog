@@ -20,7 +20,7 @@ hero_media = "/img/portrait.jpg"
 	primary = true
 
 [[btn]]
-  url = "#contact"
+  url = "mailto:kale.lazic@lexikale.com"
   label = 'Me contacter'
 
 +++

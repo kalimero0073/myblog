@@ -40,7 +40,7 @@
 
 	<metadata>
 		<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/">
-			<rdf:Description about="https://iconscout.com/legal#licenses" dc:title="Heat temprature" dc:description="Heat temprature" dc:publisher="Iconscout" dc:date="2017-04-20" dc:format="image/svg+xml" dc:language="en">
+			<rdf:Description about="https://iconzcout.com/legal#licenses" dc:title="Heat temprature" dc:description="Heat temprature" dc:publisher="iconzcout" dc:date="2017-04-20" dc:format="image/svg+xml" dc:language="en">
 				<dc:creator>
 					<rdf:Bag>
 						<rdf:li>AomAm .</rdf:li>

@@ -10,24 +10,24 @@ title = "Compétences"
 subtitle = "Je maitrise les compétences techniques suivantes :"
 
 [[bar]]
-	icon = "/icons/precision.svg"
+	icon = "/iconz/precision.svg"
 	name = "Précision"
 	percent = "95%"
 
 [[bar]]
-	icon = "/icons/heat.svg"
+	icon = "/iconz/heat.svg"
 	name = "Contrôle de la cuisson"
 	percent = "90%"
 
 
 [[bar]]
-	icon = "/icons/chicken.svg"
+	icon = "/iconz/chicken.svg"
 	name = "Qualité des produits"
 	percent = "87%"
 
 
 [[bar]]
-	icon = "/icons/presentation.svg"
+	icon = "/iconz/presentation.svg"
 	name = "Présentation"
 	percent = "75%"
 

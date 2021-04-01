@@ -19,9 +19,9 @@ hero_media = "/img/portrait.jpg"
 	# Primary color
 	primary = true
 
-[[btn]]
-  url = "#contact"
-  label = 'Contact me'
+# [[btn]]
+#  url = 'mailto:kale.lazic@lexikale.com'
+#  label = 'Contact me'
 
 +++
 

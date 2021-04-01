@@ -1,6 +1,6 @@
 # Use an empty string if you have multiple domain linking to your website
 # This string is used to generate the absolute URL for your assets.
-baseURL = 'https://lexikale.com/'
+baseURL = 'http://lexikale.com/'
 defaultContentLanguage = 'en'
 # Emoji in markdown files
 enableEmoji = true
@@ -10,7 +10,7 @@ paginate = 10
 theme = 'pico'
 # Title of the website is used for the meta tag title
 # and the square icon (not the favicon)
-title = 'Pico'
+title = 'Lexikale'
 
 [params]
 customCSS = [
@@ -22,7 +22,7 @@ customJS = ["js/console.js"] # Path relative to assets folder
 # For blog page description you can overwrite it 
 # in the front matter
 description = "Boilerplate website"
-email = "mail@example.com"
+email = "kale.lazic@lexikale.com"
 favicon = '/favicon.ico'
 # Dark mode support
 # Supported value are :
@@ -31,45 +31,45 @@ favicon = '/favicon.ico'
 # If commented the theme will use the browser theme.
 # darkMode = 'always'
 
-# Social parameters for contact_icons widget
+# Social parameters for contact_iconz widget
 [[params.social]]
 alt = "email icon"
-icon = "/icons/email.svg"
+icon = "/iconz/email.svg"
 name = "email"
-url = "mailto:mail@example.com"
+url = "mailto:kale.lazic@lexikale.com"
 
 [[params.social]]
 alt = "github icon"
 blank = true
-icon = "/icons/github.svg"
+icon = "/iconz/github.svg"
 name = "github"
 url = "https://github.com/"
 
 [[params.social]]
 alt = "medium icon"
 blank = true
-icon = "/icons/medium.svg"
+icon = "/iconz/medium.svg"
 name = "medium"
 url = "https://medium.com/"
 
 [[params.social]]
 alt = "stack-overflow icon"
 blank = true
-icon = "/icons/stack-overflow.svg"
+icon = "/iconz/stack-overflow.svg"
 name = "stack-overflow"
 url = "https://stackoverflow.com/"
 
 [[params.social]]
 alt = "twitter icon"
 blank = true
-icon = "/icons/twitter.svg"
+icon = "/iconz/twitter.svg"
 name = "twitter"
 url = "https://twitter.com/"
 
 [[params.social]]
 alt = "facebook icon"
 blank = true
-icon = "/icons/facebook.svg"
+icon = "/iconz/facebook.svg"
 name = "facebook"
 url = "https://facebook.com/"
 
@@ -78,21 +78,21 @@ url = "https://facebook.com/"
 
 [[menu.main]]
 identifier = "home" # identifier is use for translations
-pre = "" # pre is inserted before the translation (icons, image, etc)
+pre = "" # pre is inserted before the translation (iconz, image, etc)
 url = "/" 
 weight = 10 
 
 [[menu.main]]
 identifier = "blog" # identifier is use for translations
-pre = "" # pre is inserted before the translation (icons, image, etc)
+pre = "" # pre is inserted before the translation (iconz, image, etc)
 url = "/blog/" 
 weight = 20 
 
-[[menu.main]]
-identifier = "contact" # identifier is use for translations
-pre = "" # pre is inserted before the translation (icons, image, etc)
-url = "/#contact" 
-weight = 30 
+# [[menu.main]]
+# identifier = "contact" # identifier is use for translations
+# pre = "" # pre is inserted before the translation (iconz, image, etc)
+# url = "/#contact" 
+# weight = 30 
 
 # Syntax highlightning
 [markup.highlight]
@@ -114,11 +114,11 @@ languageCode = 'en'
 languageName = 'English'
 weight = 0
 
-[languages.fr]
-contentDir = 'content/fr'
-languageCode = 'fr'
-languageName = 'Français'
-weight = 2
+# [languages.de]
+# contentDir = 'content/fr'
+# languageCode = 'de'
+# languageName = 'Deutsch'
+# weight = 2
 
 # Uncomment the following lines to add an italian translation.
 # [languages.it]
