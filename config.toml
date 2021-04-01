@@ -1,6 +1,6 @@
 # Use an empty string if you have multiple domain linking to your website
 # This string is used to generate the absolute URL for your assets.
-baseURL = 'http://lexikale.com/'
+baseURL = 'https://lexikale.com/'
 defaultContentLanguage = 'en'
 # Emoji in markdown files
 enableEmoji = true
@@ -21,7 +21,7 @@ customJS = ["js/console.js"] # Path relative to assets folder
 # Homepage description
 # For blog page description you can overwrite it 
 # in the front matter
-description = "Boilerplate website"
+description = "My blog"
 email = "kale.lazic@lexikale.com"
 favicon = '/favicon.ico'
 # Dark mode support

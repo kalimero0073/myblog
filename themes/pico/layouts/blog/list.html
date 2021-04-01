@@ -2,6 +2,7 @@
 <h1 class="text-center mx-auto max-w-4xl text-4xl sm:text-5xl md:text-6xl">
 	{{ .Title }}
 </h1>
+<p class="text-center sm:text-2xl">{{ .Params.subtitle }}</p>
 <div class="overflow-hidden flex flex-wrap justify-center mx-auto my-16 px-4 max-w-6xl">
 	{{ $tags := .Site.Taxonomies.tags }}
 	{{ partial "taxonomy_list" $tags }}
