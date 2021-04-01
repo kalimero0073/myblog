@@ -27,5 +27,5 @@ hero_media = "/img/portrait.jpg"
 
 # **Hello, I am Kale. Nice to meet you!**
 
-This site provides an insight into topics that I am interested in.
+This is my website I use for sharing my experience with others.
 

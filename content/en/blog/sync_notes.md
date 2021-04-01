@@ -1,14 +1,14 @@
 +++
-title = "Krabby Patty recipe"
-subtitle = "How the best burger of all time is made."
+title = "How I automated the sync of my keepNote files"
+subtitle = "Tools: Win10, Git with Github, Powershell"
 tags = ['git', 'automation', 'keepnote']
-date = 2020-06-25
+date = 2021-03-31
 
 # For description meta tag
-description = "Recipe of the legendary Krabby Patty."
+description = "Automated sync of keepNote files"
 
 # Comment next line and the default banner wil be used.
-banner = 'img/krabby_patty.webp'
+banner = 'img/automation.jpg'
 
 +++
 

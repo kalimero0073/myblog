@@ -43,35 +43,35 @@ alt = "github icon"
 blank = true
 icon = "/iconz/github.svg"
 name = "github"
-url = "https://github.com/"
+url = "https://github.com/kalimero0073"
 
-[[params.social]]
-alt = "medium icon"
-blank = true
-icon = "/iconz/medium.svg"
-name = "medium"
-url = "https://medium.com/"
+# [[params.social]]
+# alt = "medium icon"
+# blank = true
+# icon = "/iconz/medium.svg"
+# name = "medium"
+# url = "https://medium.com/"
 
 [[params.social]]
 alt = "stack-overflow icon"
 blank = true
 icon = "/iconz/stack-overflow.svg"
 name = "stack-overflow"
-url = "https://stackoverflow.com/"
+url = "https://stackoverflow.com/users/13011405/kaluzo"
 
-[[params.social]]
-alt = "twitter icon"
-blank = true
-icon = "/iconz/twitter.svg"
-name = "twitter"
-url = "https://twitter.com/"
+# [[params.social]]
+# alt = "twitter icon"
+# blank = true
+# icon = "/iconz/twitter.svg"
+# name = "twitter"
+# url = "https://twitter.com/"
 
-[[params.social]]
-alt = "facebook icon"
-blank = true
-icon = "/iconz/facebook.svg"
-name = "facebook"
-url = "https://facebook.com/"
+# [[params.social]]
+# alt = "facebook icon"
+# blank = true
+# icon = "/iconz/facebook.svg"
+# name = "facebook"
+# url = "https://facebook.com/"
 
 # Navigation bar
 [menu]

@@ -1,7 +1,7 @@
 +++
 title = "About me"
 # subtitle = ""
-type = "blog"
+# type = "blog"
 +++
 
 I'm a **sea sponge** who works as a fry cook at the **Krusty Krab**:
