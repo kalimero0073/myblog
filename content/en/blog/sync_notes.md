@@ -1,6 +1,6 @@
 +++
-title = "How I automated the synchronization of my KeepNote files"
-subtitle = "Tools: Win10, Git with Github, PowerShell"
+title = "How I automated the synchronization of my KeepNote files between my office and home computer"
+subtitle = "Tools: Win10, Git with Github, Terminal"
 tags = ['git', 'automation', 'keepnote']
 date = 2021-03-31
 draft = false
@@ -12,40 +12,71 @@ description = "Automated sync of keepNote files using GitHub"
 banner = 'img/automation.jpg'
 
 +++
+## Prerequisites :
+- Github account
+- Windows 10
+- Terminal (e.g. Git Bash)
 
 ## Steps :
 
-- Go into the folder where you keep your files: e.g. /docu and initialize a git repository using "git init" via e.g. Git Bash terminal.
+- Go into the folder where you keep your files: e.g. \<path\>/_keepnote and initialize a git repository via e.g. Git Bash terminal:
 
 ```
-$ cd /<folder>/docu
+$ cd <path>/_keepnote
 $ git init
 ```
 
-- Then create a repository on Github (https://docs.github.com/en/github/getting-started-with-github/create-a-repo) and connect your local folder with the remote repository using "git remote add origin https://github.com/<your_username>/<your_repo>.git".
+- Then create a repository on Github (https://docs.github.com/en/github/getting-started-with-github/create-a-repo) and connect your local folder with the remote repository using:
 
+```
 $ git remote add origin https://github.com/<your_username>/<your_repo>.git
+```
 
-- Add and upload your file to the remote repository using "git add .", "git commit -m "initial commit"" and "git push origin master"
+- Add and upload your file to the remote repository:
 
 ```
 $ git add .
 $ git commit -m "initial commit"
 $ git push origin master
 ```
-- Create a powershell file "keepnotescript-office-push.ps1" in your repository (you can place it actually anywhere, but I prefer it placed within the repository as no sensitive data is included) and write a script that commits and pushes changes. Attention: this script applies only to the computer you are working on, except you keep the same directory structure on both. Here is the script content:
-
-cd \<some_folder>\<some_folder>\docu 
+- Create a PowerShell file "keepnotescript-office-push.ps1" in your repository (you can place it actually anywhere, but I prefer it placed within the repository as no sensitive data is included) and write a script that commits and pushes changes. Attention: this script applies only to the computer you are working on, except you keep the same directory structure on both. Here is the script content:
+```
+cd <path>\_keepnote 
 git add .
-git commit -am "made changes"
+git commit -m "made changes"
 git push origin master
-
-- Create a powershell file "keepnotescript-office-pull.ps1" in your repository (you can place it actually anywhere, but I prefer it placed within the repository as no sensitive data is included) and write a script that pulls changes. Attention: this script applies only to the computer you are working on, except you keep the same directory structure on both. Here is the script content:
-
-cd \<some_folder>\<some_folder>\docu 
+```
+- Create a PowerShell file "keepnotescript-office-pull.ps1" in your repository (you can place it actually anywhere, but I prefer it placed within the repository as no sensitive data is included) and write a script that pulls changes. Attention: this script applies only to the computer you are working on, except you keep the same directory structure on both. Here is the script content:
+```
+cd <path>\_keepnote 
 git pull origin master
+```
+- Add the references to the powershell files respectively to the Win10 logon and logoff by opening "gpedit.msc" - "Local Group Policy Editor". I followed the instructions on https://lifehacker.com/use-group-policy-editor-to-run-scripts-when-shutting-do-980849001. I added the "keepnotescript-office-pull.ps1" to the User Configuration > Windows Settings > Scripts (Logon/Logoff) > Logon and the "keepnotescript-office-push.ps1" to the User Configuration > Windows Settings > Scripts (Logon/Logoff) > Logoff. So every time when I logon to my computer the latest changes are pulled from Github, whereas when I logoff any changes in my local repository are pushed to Github. 
+![*Local Group Policy Editor*](/img/blogposts/20210331/add_login_script.png)
 
-- Add the powershell files to the Win10 logoff. I followed the instructions on https://lifehacker.com/use-group-policy-editor-to-run-scripts-when-shutting-do-980849001. I added the "keepnotescript-office-pull.ps1" to the User Configuration > Windows Settings > Scripts (Lognon/Logoff) > Logon and the "keepnotescript-office-push.ps1" to the User Configuration > Windows Settings > Scripts (Lognon/Logoff) > Logoff. So every time when I logon to my computer the lates changes are pulled from Github, whereas when I logoff it pushed any changes to the Github repository. 
+- If you managed to configure it on your computer you can do the same on any other Win10 computer. As a result, you will have your notes nicely synchronized and you will not have to bother about their completeness when changing from home to office or vice versa. Keep in mind that if you change the path of your note files you will have to update the path in the scripts as well.
+- For testing, update your notes, logoff and logon on your computer and see if your changes were pushed to Github. Furthermote, add a file (e.g. test.txt) in Github, logoff and logon and see if the file was pulled from Github to your local repository.
 
-If you run into issues (e.g. mmc.exe has been blocked) google solutions - in most of the cases you will find a satisfying answer (e.g. https://www.wintips.org/fix-mmc-exe-this-app-has-been-blocked-for-your-protection/). I disabled the UAC in Win10, added the files and then reactived it again as it is a security feature which should be activated.
+## Troubleshooting :
+- If you run into issues (e.g. mmc.exe has been blocked) then google solutions - in most of the cases you will find a satisfying answer (e.g. https://www.wintips.org/fix-mmc-exe-this-app-has-been-blocked-for-your-protection/). I disabled the UAC in Win10, added the files and then reactived it again as it is a Win10 security feature.
+- For issues with PowerShell scripts you may wrap your code in a try-catch and log to see what happens: 
+```
+try {
+    Start-Transcript -Path "C:\Users\<user>\<path>\transcript0.txt"
+    cd <path>\_keepnote 
+    git add .
+    git commit -m "made changes"
+    git push origin master
+} 
+catch { "An error occurred." }
+```
+- Attention: Place the PowerShell script from within the tab "PowerShell Scripts" within the "Local Group Policy Editor".
 
+## Additional information :
+- If you wish to synchronize your notes between different OS, e.g. Linux and Win10 you can google how to run scripts on logon or logoff on the respective OS. For Ubuntu 20.04 for example I can recommend following link (however, I did not test it myself): https://linuxconfig.org/how-to-run-script-on-startup-on-ubuntu-20-04-focal-fossa-server-desktop
+
+## References :
+- https://docs.github.com/en/github/getting-started-with-github/create-a-repo
+- https://lifehacker.com/use-group-policy-editor-to-run-scripts-when-shutting-do-980849001
+- https://www.wintips.org/fix-mmc-exe-this-app-has-been-blocked-for-your-protection/
+- https://linuxconfig.org/how-to-run-script-on-startup-on-ubuntu-20-04-focal-fossa-server-desktop
