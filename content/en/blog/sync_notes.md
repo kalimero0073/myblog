@@ -12,6 +12,9 @@ description = "Automated sync of keepNote files using GitHub"
 banner = 'img/automation.jpg'
 
 +++
+## Open Issues:
+- With Win UAC (User Access Control) enabled, the logoff script may block.
+
 ## Prerequisites :
 - Github account
 - Windows 10
@@ -61,6 +64,7 @@ git pull origin master
 - If you run into issues (e.g. mmc.exe has been blocked) then google solutions - in most of the cases you will find a satisfying answer (e.g. https://www.wintips.org/fix-mmc-exe-this-app-has-been-blocked-for-your-protection/). I disabled the UAC in Win10, added the files and then reactived it again as it is a Win10 security feature.
 - For issues with PowerShell scripts you may wrap your code in a try-catch and log to see what happens: 
 ```
+$ErrorActionPreference = "Stop"
 try {
     Start-Transcript -Path "C:\Users\<user>\<path>\transcript0.txt"
     cd <path>\_keepnote 
