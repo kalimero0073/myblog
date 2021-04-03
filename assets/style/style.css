@@ -1,5 +1,4 @@
 /* Example css file */
-
-/* body {
-	background-color: white!important;
-} */
+p {
+	text-align: justify;
+}

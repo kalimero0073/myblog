@@ -2,16 +2,25 @@
 title = "About me"
 # subtitle = ""
 # type = "blog"
+draft = false
 +++
-<!-- 
-I'm a **sea sponge** who works as a fry cook at the **Krusty Krab**:
-![](/img/krusty_krab.webp)
+<p style='text-align: justify;'>I was born in a medium-size city in Austria and raised in the countryside near the beautiful lake Attersee. Coming from a rather big family I am used to be surrounded by people. I like to exchange ideas with other individuals and thereby improve my reasoning. </p>
 
-The Krusty Krabe is a fast food restaurant known for it's signature burger:
+I was born in a medium-size city in Austria and raised in the countryside near the beautiful lake Attersee. Coming from a rather big family I am used to be surrounded by people. I like to exchange ideas with other individuals and thereby improve my reasoning. 
 
-![*The Krabby Patty*](/img/krabby_patty.webp)
 
-Try to make one yourself and you will be as happy as I am.
-![My first Krabby Patty](/img/spongebob-krusty-cook.webp)
 
-You can take a look at the recipe [here](/blog/krabby_patty/). -->
+## My passions
+
+
+
+
+## Authors/books that inspire me
+
+
+
+
+## Udemy courses I highly recommend:
+
+
+

@@ -13,3 +13,5 @@ nice links:
 phoenix project - kanban - improve sth every day, bc. entropy brings us into chaos is we do not do anything
 e.g. 10-finger system, coding katas
 
+java:
+- different java topics: threads, etc. - see also clean code

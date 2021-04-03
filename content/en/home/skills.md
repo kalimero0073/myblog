@@ -12,7 +12,7 @@ subtitle = "My technical skills"
 [[bar]]
 	icon = ""
 	name = "Java"
-	percent = "85%"
+	percent = "80%"
 
 [[bar]]
 	icon = ""
