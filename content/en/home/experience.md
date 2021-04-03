@@ -31,7 +31,7 @@ date_format = "Jan 2006" # Date format https://gohugo.io/functions/dateformat/#r
 [[period]]
   title = "Tutor"
   subtitle = "JKU - institute for data and knowledge engineering"
-  location = "Linz - Hörsching"
+  location = "Linz"
   date_start = "2018-10-01"
   date_end = "2019-06-01"
   description = "Homework correction (DB design, PL/SQL, etc.) and support for students"

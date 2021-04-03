@@ -16,7 +16,7 @@ subtitle = "Read about my latest projects"
 	page_type = "blog"
 
 	# Choose how much pages you would like to display
-	count = 5
+	count = 3
 
 	[content.filters]
 		# tag = "recipe"

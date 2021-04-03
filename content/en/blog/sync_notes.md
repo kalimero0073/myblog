@@ -1,8 +1,8 @@
 +++
 title = "How I automated the synchronization of my KeepNote files between my office and home computer"
 subtitle = "Tools: Win10, Git with Github, Terminal"
-tags = ['git', 'automation', 'keepnote']
-date = 2021-03-31
+tags = ['git', 'automation', 'IT']
+date = 2021-04-01
 draft = false
 
 # For description meta tag
@@ -55,7 +55,7 @@ cd <path>\_keepnote
 git pull origin master
 ```
 - Add the references to the powershell files respectively to the Win10 logon and logoff by opening "gpedit.msc" - "Local Group Policy Editor". I followed the instructions on https://lifehacker.com/use-group-policy-editor-to-run-scripts-when-shutting-do-980849001. I added the "keepnotescript-office-pull.ps1" to the User Configuration > Windows Settings > Scripts (Logon/Logoff) > Logon and the "keepnotescript-office-push.ps1" to the User Configuration > Windows Settings > Scripts (Logon/Logoff) > Logoff. So every time when I logon to my computer the latest changes are pulled from Github, whereas when I logoff any changes in my local repository are pushed to Github. 
-![*Local Group Policy Editor*](/img/blogposts/20210331/add_login_script.png)
+![*Local Group Policy Editor*](/img/blogposts/202104/add_logon_script.png)
 
 - If you managed to configure it on your computer you can do the same on any other Win10 computer. As a result, you will have your notes nicely synchronized and you will not have to bother about their completeness when changing from home to office or vice versa. Keep in mind that if you change the path of your note files you will have to update the path in the scripts as well.
 - For testing, update your notes, logoff and logon on your computer and see if your changes were pushed to Github. Furthermote, add a file (e.g. test.txt) in Github, logoff and logon and see if the file was pulled from Github to your local repository.
