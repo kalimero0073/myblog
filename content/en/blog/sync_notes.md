@@ -13,7 +13,7 @@ banner = 'img/automation.jpg'
 
 +++
 ## Open Issues:
-- With Win UAC (User Access Control) enabled, the logoff script may block.
+- With Win UAC (User Account Control) enabled, the logoff script may block.
 
 ## Prerequisites :
 - Github account
