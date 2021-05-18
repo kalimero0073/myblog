@@ -10,21 +10,10 @@ I was born in a medium-size city in Austria and raised in the countryside near t
 - Teasing my girlfriend
 - Playing a good football match
 - Spending time in nature
+- Reading books/news
 
 
-
-## Authors/books that inspire me
-### IT-books
+## IT books that have inspired me
 - The phoenix project by Gene Kim, Kevin Behr, George Spafford
 - Clean code by Robert Martin
-### Authors
-- Hermann Hesse
-- Fyodor Dostoevsky
-- Thomas Bernhard
 
-
-
-## Udemy courses I highly recommend:
-- RESTful web services with Spring
-- PHP registration and login system
-- Docker and Kubernetes: The Complete Guide

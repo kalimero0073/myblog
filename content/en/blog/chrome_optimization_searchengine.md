@@ -3,7 +3,7 @@ title = "How I can easily access important links"
 subtitle = ""
 tags = ['optimization', 'workflow', 'IT']
 date = 2021-04-04
-draft = false
+draft = true
 
 # For description meta tag
 description = "chrome configuration work flow optimization"

@@ -1,12 +1,12 @@
 +++
-title = "How I created my website in a few hours"
+title = "How I put this website online in a few hours"
 subtitle = ""
 tags = ['web', 'IT']
 date = 2021-04-02
 draft = false
 
 # For description meta tag
-description = "How I created my website in a few hours"
+description = "How I put this website online in a few hours"
 
 # Comment next line and the default banner wil be used.
 banner = '/img/laptop_hands.jpg'

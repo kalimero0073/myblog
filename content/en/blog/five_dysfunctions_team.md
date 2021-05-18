@@ -3,7 +3,7 @@ title = "The five dysfunctions of a team and how to tackle these"
 subtitle = ""
 tags = ['team', 'IT']
 date = 2021-04-04
-draft = false
+draft = true
 
 # For description meta tag
 description = "five dysfunctions of a team"
