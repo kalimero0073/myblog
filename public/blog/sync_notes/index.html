@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang='en' class=''>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name=viewport content="width=device-width, initial-scale=1">
+
+<meta name="description" content="Automated sync of keepNote files using GitHub" />
+
+<title>
+	Lexikale
+	 - How I automated the synchronization of my KeepNote files between my office and home computer 
+</title>
+
+
+
+<link rel="icon" href="/favicon.ico">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://lexikale.com/js/pico.min.27558fbed3ed65af98e6dabb99e85842.js" intergrity="md5-J1WPvtPtZa&#43;Y5tq7mehYQg==" crossorigin="anonymous"></script>
+
+
+	
+
+
+
+
+
+<link rel="stylesheet" href="https://lexikale.com/css/main.min.fa7639681cfc14c9b6deae530fd7c586.css" crossorigin="anonymous" media="screen"
+	integrity="md5-+nY5aBz8FMm23q5TD9fFhg==">
+
+
+
+
+
+
+<link rel="stylesheet" href="https://lexikale.com/css/syntax.min.a381883ed9f1079c185da5f1200cd5a9.css" crossorigin="anonymous"
+	integrity="md5-o4GIPtnxB5wYXaXxIAzVqQ==" media="screen">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://lexikale.com/style/style.min.9c9ac440cb434508ce0f5e53ab331c78.css" crossorigin="anonymous" media="screen"
+	integrity="md5-nJrEQMtDRQjOD15TqzMceA==">
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://lexikale.com/css/main.min.d5d46344e3b621a3e3a173927106f45d.css" crossorigin="anonymous" media="screen"
+	integrity="md5-1dRjROO2IaPjoXOScQb0XQ==">
+
+
+</head>
+
+<body class="min-h-screen bg-secondary-light dark:bg-secondary text-primary relative pb-24">
+	
+	<div id="top" class="dark"></div>
+
+<header class="w-full flex items-center justify-between px-5 mx-auto md:pt-8 md:max-w-5xl pt-5">
+	
+	<div class="flex items-center">
+		<a href="https://lexikale.com/" class="inline-block font-bold no-underline select-none">
+			<h1 class="hidden md:block font-charter tracking-normal m-0">
+				Lexikale
+			</h1>
+
+			<div class="md:hidden">
+				<div class="w-8 h-8 relative font-bold bg-white blend-diff">
+	<h1 class="absolute-center m-0 font-charter text-2xl text-gray-100 blend-diff select-none">
+		L
+	</h1>
+</div>
+			</div>
+		</a>
+		
+	</div>
+
+	<nav class="">
+		
+		<a href="/"
+			class='mx-1 md:mx-2 hover:text-primary-light dark:hover:text-primary-dark no-underline'>
+			 Home
+		</a>
+		
+		<a href="/blog/"
+			class='mx-1 md:mx-2 hover:text-primary-light dark:hover:text-primary-dark no-underline'>
+			 Blog
+		</a>
+		
+	</nav>
+</header>
+	
+
+	<main class="w-full px-4 pt-8 mx-auto md:max-w-4xl overflow-x-hidden md:overflow-visible ">
+<button onclick="window.history.back()"
+	class="bg-transparent border-none font-bold">&larr;Back</button>
+<h1 class="text-center mx-auto max-w-4xl text-4xl sm:text-5xl md:text-6xl">
+	How I automated the synchronization of my KeepNote files between my office and home computer
+</h1>
+
+<h2 class="text-center font-serif font-thin mx-auto mb-16 max-w-4xl text-4xl">
+	Tools: Win10, Git with Github, Terminal
+</h2>
+
+<div class="text-justify leading-loose mb-12 text-lg">
+	<h2 id="open-issues">Open Issues:</h2>
+<ul>
+<li>With Win UAC (User Account Control) enabled, the logoff script may block.</li>
+</ul>
+<h2 id="prerequisites-">Prerequisites :</h2>
+<ul>
+<li>Github account</li>
+<li>Windows 10</li>
+<li>Terminal (e.g. Git Bash)</li>
+</ul>
+<h2 id="steps-">Steps :</h2>
+<ul>
+<li>Go into the folder where you keep your files: e.g. &lt;path&gt;/_keepnote and initialize a git repository via e.g. Git Bash terminal:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ cd &lt;path&gt;/_keepnote
+$ git init
+</code></pre></div><ul>
+<li>Then create a repository on Github (<a href="https://docs.github.com/en/github/getting-started-with-github/create-a-repo">https://docs.github.com/en/github/getting-started-with-github/create-a-repo</a>) and connect your local folder with the remote repository using:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git remote add origin https://github.com/&lt;your_username&gt;/&lt;your_repo&gt;.git
+</code></pre></div><ul>
+<li>Add and upload your file to the remote repository:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git add .
+$ git commit -m &#34;initial commit&#34;
+$ git push origin master
+</code></pre></div><ul>
+<li>Create a PowerShell file &ldquo;keepnotescript-office-push.ps1&rdquo; in your repository (you can place it actually anywhere, but I prefer it placed within the repository as no sensitive data is included) and write a script that commits and pushes changes. Attention: this script applies only to the computer you are working on, except you keep the same directory structure on both. Here is the script content:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cd &lt;path&gt;\_keepnote 
+git add .
+git commit -m &#34;made changes&#34;
+git push origin master
+</code></pre></div><ul>
+<li>Create a PowerShell file &ldquo;keepnotescript-office-pull.ps1&rdquo; in your repository (you can place it actually anywhere, but I prefer it placed within the repository as no sensitive data is included) and write a script that pulls changes. Attention: this script applies only to the computer you are working on, except you keep the same directory structure on both. Here is the script content:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cd &lt;path&gt;\_keepnote 
+git pull origin master
+</code></pre></div><ul>
+<li>
+<p>Add the references to the powershell files respectively to the Win10 logon and logoff by opening &ldquo;gpedit.msc&rdquo; - &ldquo;Local Group Policy Editor&rdquo;. I followed the instructions on <a href="https://lifehacker.com/use-group-policy-editor-to-run-scripts-when-shutting-do-980849001">https://lifehacker.com/use-group-policy-editor-to-run-scripts-when-shutting-do-980849001</a>. I added the &ldquo;keepnotescript-office-pull.ps1&rdquo; to the User Configuration &gt; Windows Settings &gt; Scripts (Logon/Logoff) &gt; Logon and the &ldquo;keepnotescript-office-push.ps1&rdquo; to the User Configuration &gt; Windows Settings &gt; Scripts (Logon/Logoff) &gt; Logoff. So every time when I logon to my computer the latest changes are pulled from Github, whereas when I logoff any changes in my local repository are pushed to Github. 
+<img  class="mx-auto my-4"  src="/img/blogposts/202104/add_logon_script.png" alt="&lt;em&gt;Local Group Policy Editor&lt;/em&gt;"
+	>
+
+
+<div class="text-center my-2 font-sans text-md text-grey-800">
+	<em>Local Group Policy Editor</em>
+</div>
+</p>
+</li>
+<li>
+<p>If you managed to configure it on your computer you can do the same on any other Win10 computer. As a result, you will have your notes nicely synchronized and you will not have to bother about their completeness when changing from home to office or vice versa. Keep in mind that if you change the path of your note files you will have to update the path in the scripts as well.</p>
+</li>
+<li>
+<p>For testing, update your notes, logoff and logon on your computer and see if your changes were pushed to Github. Furthermote, add a file (e.g. test.txt) in Github, logoff and logon and see if the file was pulled from Github to your local repository.</p>
+</li>
+</ul>
+<h2 id="troubleshooting-">Troubleshooting :</h2>
+<ul>
+<li>If you run into issues (e.g. mmc.exe has been blocked) then google solutions - in most of the cases you will find a satisfying answer (e.g. <a href="https://www.wintips.org/fix-mmc-exe-this-app-has-been-blocked-for-your-protection/)">https://www.wintips.org/fix-mmc-exe-this-app-has-been-blocked-for-your-protection/)</a>. I disabled the UAC in Win10, added the files and then reactived it again as it is a Win10 security feature.</li>
+<li>For issues with PowerShell scripts you may wrap your code in a try-catch and log to see what happens:</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ErrorActionPreference = &#34;Stop&#34;
+try {
+    Start-Transcript -Path &#34;C:\Users\&lt;user&gt;\&lt;path&gt;\transcript0.txt&#34;
+    cd &lt;path&gt;\_keepnote 
+    git add .
+    git commit -m &#34;made changes&#34;
+    git push origin master
+} 
+catch { &#34;An error occurred.&#34; }
+</code></pre></div><ul>
+<li>Attention: Place the PowerShell script from within the tab &ldquo;PowerShell Scripts&rdquo; within the &ldquo;Local Group Policy Editor&rdquo;.</li>
+</ul>
+<h2 id="additional-information-">Additional information :</h2>
+<ul>
+<li>If you wish to synchronize your notes between different OS, e.g. Linux and Win10 you can google how to run scripts on logon or logoff on the respective OS. For Ubuntu 20.04 for example I can recommend following link (however, I did not test it myself): <a href="https://linuxconfig.org/how-to-run-script-on-startup-on-ubuntu-20-04-focal-fossa-server-desktop">https://linuxconfig.org/how-to-run-script-on-startup-on-ubuntu-20-04-focal-fossa-server-desktop</a></li>
+</ul>
+<h2 id="references-">References :</h2>
+<ul>
+<li><a href="https://docs.github.com/en/github/getting-started-with-github/create-a-repo">https://docs.github.com/en/github/getting-started-with-github/create-a-repo</a></li>
+<li><a href="https://lifehacker.com/use-group-policy-editor-to-run-scripts-when-shutting-do-980849001">https://lifehacker.com/use-group-policy-editor-to-run-scripts-when-shutting-do-980849001</a></li>
+<li><a href="https://www.wintips.org/fix-mmc-exe-this-app-has-been-blocked-for-your-protection/">https://www.wintips.org/fix-mmc-exe-this-app-has-been-blocked-for-your-protection/</a></li>
+<li><a href="https://linuxconfig.org/how-to-run-script-on-startup-on-ubuntu-20-04-focal-fossa-server-desktop">https://linuxconfig.org/how-to-run-script-on-startup-on-ubuntu-20-04-focal-fossa-server-desktop</a></li>
+</ul>
+
+</div>
+
+
+<hr class="mb-6 mt-24">
+
+
+<div class="flex flex-wrap justify-between items-center">
+	
+
+	
+	<div
+		class=" ml-auto  mt-1 text-center sm:text-right overflow-ellipsis pl-1">
+		<a href="https://lexikale.com/blog/how_i_created_this_website/">
+			<span class="underline">How I created my website in a few hours</span>
+		</a>
+		<a class="ml-4 no-underline" href="https://lexikale.com/blog/how_i_created_this_website/">
+			<img src="/iconz/top_arrow.svg" class="transform rotate-90 inline-block">
+		</a>
+	</div>
+	
+</div>
+
+<hr class="my-6">
+<div class="flex justify-center items-center flex-wrap">
+	
+	<a href="mailto:kale.lazic@lexikale.com" title="email"
+		class="bg-black rounded-full p-3 mx-2 my-2 transform hover:scale-110 active:scale-90 transition-transform duration-300 ease-in-out"
+		 >
+		<img src="/iconz/email.svg" alt="email icon" class="w-4 h-4 md:w-6 md:h-6 blend-diff">
+	</a>
+	
+	<a href="https://github.com/kalimero0073" title="github"
+		class="bg-black rounded-full p-3 mx-2 my-2 transform hover:scale-110 active:scale-90 transition-transform duration-300 ease-in-out"
+		 target="_blank"   rel="noopener" >
+		<img src="/iconz/github.svg" alt="github icon" class="w-4 h-4 md:w-6 md:h-6 blend-diff">
+	</a>
+	
+	<a href="https://stackoverflow.com/users/13011405/kaluzo" title="stack-overflow"
+		class="bg-black rounded-full p-3 mx-2 my-2 transform hover:scale-110 active:scale-90 transition-transform duration-300 ease-in-out"
+		 target="_blank"   rel="noopener" >
+		<img src="/iconz/stack-overflow.svg" alt="stack-overflow icon" class="w-4 h-4 md:w-6 md:h-6 blend-diff">
+	</a>
+	
+</div>
+<div class="mt-6"></div>
+
+
+	</main>
+
+	<div class="absolute bottom-0 w-full"><footer class="w-full h-24 text-center text-xs text-gray-400 bg-black relative">
+	<div class="w-full px-6 md:pt-0 md:mx-auto md:max-w-5xl flex flex-1 space-between items-center absolute-center">
+		<a href="https://lexikale.com/" class="absolute">
+			<div class="w-8 h-8 relative font-bold bg-white blend-diff">
+	<h1 class="absolute-center m-0 font-charter text-2xl text-gray-100 blend-diff select-none">
+		L
+	</h1>
+</div>
+		</a>
+
+		<div class="h-full flex-1">
+			<span class="select-none">Designed by
+				<a href="https://github.com/negrel/" class="text-gray-400 hover:text-gray-200 no-underline">negrel</a>
+			</span>
+		</div>
+	</div>
+</footer>
+	</div>
+</body>
+
+</html>

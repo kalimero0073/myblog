@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>team on Lexikale</title>
+    <link>https://lexikale.com/tags/team/</link>
+    <description>Recent content in team on Lexikale</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 04 Apr 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://lexikale.com/tags/team/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The five dysfunctions of a team and how to tackle these</title>
+      <link>https://lexikale.com/blog/five_dysfunctions_team/</link>
+      <pubDate>Sun, 04 Apr 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://lexikale.com/blog/five_dysfunctions_team/</guid>
+      <description>Introduction &amp;ldquo;The Five Dysfunctions of a Team&amp;rdquo; is a book by Patrick Lencioni. The first time I read about it was in 2020 while reading the phenomenal book &amp;ldquo;The Phoenix Project&amp;rdquo;. To be honest, I did not read the original book by Patrick Lencioni (I am too lazy 😏 - sorry!). However, I do think that having contemplated about the model, which summarizes the five dysfunctions, in combination with my work experience gives me a deeper understanding which I would like to share with you.</description>
+    </item>
+    
+  </channel>
+</rss>

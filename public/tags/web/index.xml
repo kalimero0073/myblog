@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>web on Lexikale</title>
+    <link>https://lexikale.com/tags/web/</link>
+    <description>Recent content in web on Lexikale</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 02 Apr 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://lexikale.com/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I created my website in a few hours</title>
+      <link>https://lexikale.com/blog/how_i_created_this_website/</link>
+      <pubDate>Fri, 02 Apr 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://lexikale.com/blog/how_i_created_this_website/</guid>
+      <description>Prerequisites:  Hugo installation (https://gohugo.io/getting-started/quick-start/#step-1-install-hugo) Hosting platform (e.g. Github Pages) Terminal - e.g. Git Bash Code editor - e.g. VSCode Chrome developer tools knowledge Basic HTML, CSS, markdown knowledge  Steps:  Create an empty folder (e.g. myblog)  $ mkdir myblog  Clone a hugo project including a theme (e.g. https://themes.gohugo.io/hugo-theme-pico/) into a temporary directory &amp;ldquo;temp&amp;rdquo;  $ git clone https://github.com/negrel/hugo-theme-pico.git temp  Copy the projects exampleSite into the website folder myblog and delete temp  $ cp -r temp/exampleSite/* myblog $ rm -rf temp  Run the setup.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>keepnote on Lexikale</title>
+    <link>https://lexikale.com/tags/keepnote/</link>
+    <description>Recent content in keepnote on Lexikale</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 31 Mar 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://lexikale.com/tags/keepnote/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I automated the synchronization of my KeepNote files between my office and home computer</title>
+      <link>https://lexikale.com/blog/sync_notes/</link>
+      <pubDate>Wed, 31 Mar 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://lexikale.com/blog/sync_notes/</guid>
+      <description>Open Issues:  With Win UAC (User Account Control) enabled, the logoff script may block.  Prerequisites :  Github account Windows 10 Terminal (e.g. Git Bash)  Steps :  Go into the folder where you keep your files: e.g. &amp;lt;path&amp;gt;/_keepnote and initialize a git repository via e.g. Git Bash terminal:  $ cd &amp;lt;path&amp;gt;/_keepnote $ git init  Then create a repository on Github (https://docs.github.com/en/github/getting-started-with-github/create-a-repo) and connect your local folder with the remote repository using:  $ git remote add origin https://github.</description>
+    </item>
+    
+  </channel>
+</rss>
