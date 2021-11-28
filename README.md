@@ -1,3 +1,2 @@
-# Hugo example site for [Pico](https://github.com/negrel/hugo-theme-pico/) theme
+# My website created using [Hugo](https://gohugo.io/) and the pico theme by [negrel](https://github.com/negrel/hugo-theme-pico/)
 
-See [instructions](https://github.com/negrel/hugo-theme-pico/)

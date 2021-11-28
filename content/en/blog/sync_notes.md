@@ -1,19 +1,19 @@
 +++
-title = "How I automated the synchronization of my KeepNote files between my office and home computer"
+title = "How I tried automating the synchronization of my KeepNote files between my office and home computer using Github"
 subtitle = "Tools: Win10, Git with Github, Terminal"
 tags = ['git', 'automation', 'IT']
 date = 2021-04-01
 draft = false
 
 # For description meta tag
-description = "Automated sync of keepNote files using GitHub"
+description = "(Unstable) automated sync of keepNote files using GitHub"
 
 # Comment next line and the default banner wil be used.
 banner = 'img/automation.jpg'
 
 +++
 ## Open Issues:
-- With Win UAC (User Account Control) enabled, the logoff script may block.
+- With Win UAC (User Account Control) enabled, the logoff or logon script may block -> as a solution one may fetch/push the keepnote files manually via the terminal.
 
 ## Prerequisites :
 - Github account
